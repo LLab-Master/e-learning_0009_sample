@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Wellcome{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+<h1>Flask Sample</h1>
+<p>
+    <a href={{ url_for('user_list') }}>ユーザ一覧</a><br>
+    <a href={{ url_for('input') }}>ユーザ登録</a><br>
+    <a href={{ url_for('logout') }}>ログアウト</a><br>
+
+</p>
+<hr>
+{% endblock %}

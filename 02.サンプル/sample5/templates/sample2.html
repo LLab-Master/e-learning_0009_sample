@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Form sample</title>
+</head>
+<body>
+
+{% for message in form.name.errors %}
+<div style="color: red;"><p class="text-danger">{{ message }}</p></div>
+{% endfor %}
+
+    <form method='POST'>
+        {{form.hidden_tag()}}
+        {{form.name.label }}{{form.name()}}
+        {{form.submit()}}
+    </form>
+
+{% if name %}
+<h3>お名前は {{name}} ですね</h3>
+{% endif %}
+ 
+
+</body>
+</html>

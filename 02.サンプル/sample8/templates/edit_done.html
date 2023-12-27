@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Wellcome{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<h2>以下の内容で変更しました。</h2>
+
+<p>ID: {{user.id}}</p>
+<p>名前: {{user.name}}</p>
+<p>パスワード: {{user.password}}</p>
+<p>年齢: {{user.age}}</p>
+<p>住所: {{user.address}}</p>
+
+
+
+<p>ご登録ありがとうございました。</p>
+<a href={{ url_for('index') }}>メニューに戻る</a>
+<br>
+
+{% endblock %}

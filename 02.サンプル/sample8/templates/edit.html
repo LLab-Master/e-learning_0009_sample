@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Wellcome{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% macro render_field(field) %}
+  <dt>{{ field.label }}
+  <dd>{{ field(**kwargs)|safe }}
+  {% if field.errors %}
+    <ul class=errors>
+    {% for error in field.errors %}
+      <li>{{ error }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  </dd>
+{% endmacro %}
+
+{% block content %}
+<h1>Flask Form Sample</h1>
+
+<p>User Id: {{ session['user_id'] }}</p>
+<form method="POST">
+
+    {{form.hidden_tag()}} <br>
+    {{ render_field(form.name) }}
+    {{ render_field(form.password) }}
+    {{ render_field(form.age) }}
+    {{ render_field(form.address) }}
+
+    <br>
+
+    {{form.submit()}}
+</form>
+
+
+
+{% endblock %}

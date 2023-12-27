@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Wellcome{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<h2>登録内容の確認です。</h2>
+
+<table border="1">
+    <tr>
+        <th>氏名</th>
+        <td>{{user.name}}</td>
+    </tr>
+    <tr>
+        <th>パスワード</th>
+        <td>{{user.password}}</td>
+    </tr>
+    <tr>
+        <th>年齢</th>
+        <td>{{user.age}}</td>
+    </tr>
+    <tr>
+        <th>住所</th>
+        <td>{{user.address}}</td>
+    </tr>
+</table>
+
+<a href={{ url_for('done') }}>登録</a>
+<br>
+
+{% endblock %}
